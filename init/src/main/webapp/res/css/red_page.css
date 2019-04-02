@@ -1,0 +1,155 @@
+.page {
+  width: 100%;
+  max-width: 540px;
+  min-height: 10rem;
+  position: relative;
+}
+.page .red_header {
+  width: 100%;
+}
+.page .red_header .picture {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 0.8rem;
+  margin-bottom: 0.26666667rem;
+}
+.page .red_header .picture img{
+  width: 1.2rem;
+  height: 1.2rem;
+}
+.page .red_header p {
+  text-align: center;
+  vertical-align: middle;
+  color: #ff9933;
+  font-size: 0.26666667rem;
+}
+.page .red_title {
+  margin-top: 0.4rem;
+  text-align: center;
+}
+.page .red_title h3 {
+  font-size: 0.4rem;
+  font-weight: 600;
+  color: #000;
+}
+.page .read_line {
+  width: 71%;
+  height: 0.42666667rem;
+  text-align: center;
+  background-color: #ff9933;
+  position: absolute;
+  left: 50%;
+  top: 63%;
+  transform: translate(-50%, 0);
+  z-index: 10;
+  border-radius: 0.08rem;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -ms-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -o-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+}
+.page .red_content {
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 0.13333333rem;
+  border: 0.08rem solid #fe1518;
+  border-radius: 0 0.53333333rem 0.53333333rem 0;
+  min-height: 8rem;
+  background-color: #515151;
+  padding: 0.26666667rem 0.4rem 0.26666667rem 0.26666667rem;
+  position: relative;
+}
+.page .red_content .red_shadow {
+  background-color: #f2f2f2;
+  width: 100%;
+  height: 100%;
+  min-height: 8rem;
+  z-index: 2;
+}
+.page .red_content .red_shadow .red_content_title {
+  width: 100%;
+  padding: 0.21333333rem 0.26666667rem 0;
+}
+.page .red_content .red_shadow .red_content_title h3 {
+  font-size: 0.32rem;
+  color: #000;
+  font-weight: 600;
+}
+.page .red_content .red_shadow .red_content_source {
+  width: 100%;
+  min-height: 7.5rem;
+  padding: 0.08rem 0.26666667rem 0.26666667rem;
+  font-size: 0.26666667rem;
+  color: #949494;
+  position: relative;
+  z-index: 1;
+}
+.page .red_content .red_shadow .red_content_read {
+  width: 90%;
+  height: 73%;
+  background-color: #fe1518;
+  background-size: cover;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.page .red_content .red_shadow .red_content_read .read_mid {
+  width: 6.69333333rem;
+  height: 6.05333333rem;
+  overflow: hidden;
+}
+.page .red_content .red_shadow .red_content_read .read_mid .triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-bottom: 1.46666667rem solid transparent;
+  border-right: 1.46666667rem solid #f2f2f2;
+  position: absolute;
+  top: -0.02666667rem;
+  right: -0.02666667rem;
+}
+.page .red_content .red_shadow .red_content_read .read_mid .read_circular {
+  width: 2.26666667rem;
+  height: 2.26666667rem;
+  border-radius: 50%;
+  background-color: #ff9933;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin-left: -0.8rem;
+  margin-top: -1.01333333rem;
+  z-index: 20;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -ms-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -o-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+}
+.page .red_content .red_shadow .red_content_read .read_mid .read_circular span {
+  display: block;
+  font-size: 0.53333333rem;
+  font-family: 'PingFangSC-Regular', 'PingFang SC';
+  color: #fff;
+  text-align: center;
+  line-height: 2.26666667rem;
+}
+.page .red_content .red_shadow .red_content_read .read_mid .read_foo {
+  position: absolute;
+  left: 50%;
+  margin-left: -0.58666667rem;
+  bottom: 0.4rem;
+  color: #FF6666;
+  z-index: 30;
+  font-size: 0.38rem;
+}
+.page .red_footer {
+  text-align: center;
+  margin: 0.8rem 0;
+  font-size: 0.38rem;
+}
+

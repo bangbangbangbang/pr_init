@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:p="http://www.springframework.org/schema/p"
+	   xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd 
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd
+   		http://code.alibabatech.com/schema/dubbo
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd" default-autowire="byType">
+
+    <dubbo:application name="yzmm-core" />
+    <dubbo:registry id="yzmm-core-registry" protocol="zookeeper" address="${yzmm.core.dubbo.registry}" register="${yzmm.core.dubbo.registry.register}"/>
+    <dubbo:protocol name="dubbo" port="${project.dubbo.port}"  server="netty" client="netty" serialization="hessian2" charset="UTF-8" threadpool="cached" threads="20000" queues="0" iothreads="25" buffer="8192" accepts="20000" payload="8388608" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ITcInfoService" ref="tcInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IVodCourseService" ref="vodCourseServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ILiveCourseService" ref="liveCourseServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IWxPayService" ref="wxPayServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IOpenMessageService" ref="openMessageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IPassportManageService" ref="passportManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IUserOrderService" ref="userOrderServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IUserInfoService" ref="userInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ISmsService" ref="smsServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IProductTypeManageService" ref="productTypeManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo"/>
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ISalerInfoService" ref="salerInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo"/>
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ISalerRoyaltiesService" ref="salerRoyaltiesServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo"/>
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IKnowledgeService" ref="knowledgeServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo"/>
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IBabyInfoService" ref="babyInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IUserVipIdentityService" ref="userVipIdentityServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICourseGroupService" ref="courseGroupServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICourseGroupRelationService" ref="courseGroupRelationServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+    <dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ISuggestionFeedbackService" ref="suggestionFeedbackServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ITipRuleService" ref="tipRuleServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IQiniuKeyManageService" ref="qiniuKeyManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IOpenPlatformUserService" ref="openPlatformUserManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICourseRealtimePeakRecordService" ref="courseRealtimePeakRecordServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ISalerPermanentQrcodeManageService" ref="salerPermanentQrcodeManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IWxCheckBillResultService" ref="wxCheckBillResultServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IWxCheckBillExceptionDetailService" ref="wxCheckBillExceptionDetailServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IWxCheckBillDetailService" ref="wxCheckBillDetailServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IPayOrderMonthChannelStatisticsService" ref="payOrderMonthChannelStatisticsServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IPayOrderMonthStatisticsService" ref="payOrderMonthStatisticsServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IPayOrderMonthStatisticsDetailService" ref="payOrderMonthStatisticsDetailServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IUserRefundService" ref="userRefundServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICouponQrcodeManageService" ref="couponQrcodeManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IMiaoQuestionsAnswersService" ref="miaoQuestionsAnswersServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IKnowledgeDaymiaoService" ref="knowledgeDaymiaoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IUserAwardCourseService" ref="userAwardCourseServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ITopicInfoService" ref="topicInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ITopicReplyService" ref="topicReplyServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ITopicScopeService" ref="topicScopeServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IUserCommentService" ref="userCommentServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityTzlService" ref="activityTzlServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityTzlReplyService" ref="activityTzlReplyServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IKnowledgeCommentService" ref="knowledgeCommentServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IMyUserInfoService" ref="myUserInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IDaysPlanActivityService" ref="daysPlanActivityServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IDaysPlanActivityPrivilegeScopeService" ref="daysPlanActivityPrivilegeScopeServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IDaysPlanActivityScopeService" ref="daysPlanActivityScopeServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IDaysPlanActivityHomeworkService" ref="daysPlanActivityHomeworkServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IAliyunKeyManageService" ref="aliyunKeyManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IBannerService" ref="bannerServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IGlobalLabelService" ref="globalLabelServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IArticleService" ref="articleServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ILabelAssociationService" ref="labelAssociationServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IRecommendService" ref="recommendServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IRecommendAssociationService" ref="recommendAssociationServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IOpenSearchService" ref="openSearchServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IHotWordsService" ref="hotWordsServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IKeywordService" ref="keywordServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityAwardListService" ref="activityAwardListServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityClassifyService" ref="activityClassifyServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityMedalService" ref="activityMedalServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IMedalSeriesService" ref="medalSeriesServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IClassifyMedalAssociationService" ref="classifyMedalAssociationServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IInvoiceInfoService" ref="invoiceInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ISendSmsRecordService" ref="sendSmsRecordServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityGeneralizeService" ref="activityGeneralizeServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityGeneralizeCardService" ref="activityGeneralizeCardServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IParamsDynamicConfigService" ref="paramsDynamicConfigServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICourseScoreService" ref="courseScoreServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IDealerUserInfoService" ref="dealerUserInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IDealerOrgInfoService" ref="dealerOrgInfoServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICertificatesManageService" ref="certificatesManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IDealerCardAssociateService" ref="dealerCardAssociateServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IProductManageService" ref="productManageServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />	
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IActivityGeneralizeReplyService" ref="activityGeneralizeReplyServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />	
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICpWdResultService" ref="cpWdResultServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />	
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ILuckDrawBindingService" ref="luckDrawBindingServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />	
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ILuckDrawPrizeService" ref="luckDrawPrizeServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />	
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ILuckDrawManagerService" ref="luckDrawManagerServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IUserCouponService" ref="userCouponServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />	
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ITopicCourseService" ref="topicCourseServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ITopicCourseContentService" ref="topicCourseContentServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ISmallDayUpdateService" ref="smallDayUpdateServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ICouponService" ref="couponServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IWeixinMpLoginCallbackService" ref="weixinMpLoginCallbackServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.ILoginService" ref="loginServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IPfundRecordService" ref="pfundRecordServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IPfundTotalQuotaService" ref="pfundTotalQuotaServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IKjaFundPrizeService" ref="kjaFundPrizeServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IKjaFundRecordService" ref="kjaFundRecordServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+	<dubbo:service registry="yzmm-core-registry" application="yzmm-core" interface="com.fld.init.service.IKjaFundTotalQuotaService" ref="kjaFundTotalQuotaServiceImpl" version="${yzmm.core.dubbo.version}" protocol="dubbo" />
+</beans>

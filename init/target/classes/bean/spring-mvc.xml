@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	   xmlns:aop="http://www.springframework.org/schema/aop" 
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:mvc="http://www.springframework.org/schema/mvc" 
+	   xmlns:tx="http://www.springframework.org/schema/tx" 
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xsi:schemaLocation="http://www.springframework.org/schema/aop 
+		http://www.springframework.org/schema/aop/spring-aop.xsd 
+		http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans.xsd 
+		http://www.springframework.org/schema/context 
+		http://www.springframework.org/schema/context/spring-context.xsd 
+		http://www.springframework.org/schema/mvc 
+		http://www.springframework.org/schema/mvc/spring-mvc.xsd 
+		http://www.springframework.org/schema/tx 
+		http://www.springframework.org/schema/tx/spring-tx.xsd">
+		
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<context:component-scan  base-package="com.fld.init.ctrl,com.fld.init.http"  />
+	
+	<mvc:default-servlet-handler/>
+	<!-- spring mvc @ResponseBody json 返回乱码问题解决 -->
+    <mvc:annotation-driven>
+	    	<mvc:message-converters>
+              <bean class="org.springframework.http.converter.StringHttpMessageConverter"> 
+                  <property name="supportedMediaTypes"> 
+                      <list> 
+                          <value>text/html; charset=utf-8</value> 
+                      </list> 
+                  </property> 
+              </bean>
+              <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">  
+                <property name="objectMapper">  
+                    <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+                        <!-- 为null字段时不显示 -->
+                        <property name="serializationInclusion">
+                            <value type="com.fasterxml.jackson.annotation.JsonInclude.Include">NON_NULL</value>
+                        </property> 
+                    </bean>  
+                </property>  
+            </bean>  
+	    	</mvc:message-converters>
+    </mvc:annotation-driven>
+	 <mvc:resources location="/res/**" mapping="/res/"></mvc:resources>
+	 
+    <!-- 
+     <mvc:interceptors>
+	    	<mvc:interceptor>
+	    		<mvc:mapping path="/yzmm/**"/>
+	    		<bean class="com.fld.init.ctrl.interceptor.FullPathInterceptor">
+	    			<property name="noneLogin" >
+                   <list>
+                       <value>/yzmm/account/logout</value>
+                       <value>/yzmm/error/*</value>
+                       <value>/yzmm/weixin/open/login</value>
+                       <value>/yzmm/account/login</value>
+                   </list>
+               </property>
+	    		</bean>
+	    	</mvc:interceptor>
+	    	<mvc:interceptor>
+	    		<mvc:mapping path="/yzmm/api/**"/>
+	    		<bean class="com.fld.init.ctrl.interceptor.ThirdpartyInterceptor"></bean>
+	    	</mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/yzmm/account/**" />
+            <mvc:mapping path="/yzmm/wxmppay/**" />
+            <mvc:mapping path="/yzmm/weixin/m/**" />
+            <mvc:mapping path="/yzmm/share/**" />
+            <bean class="com.fld.init.ctrl.interceptor.SessionInterceptor" >
+            <property name="isMweb" value="true"/>
+            	<property name="writeUrls" >
+                   <set>
+                   
+                       <value>/yzmm/account/login</value>
+                   </set>
+               </property>
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+     -->
+    
+    <import resource="classpath:/bean/spring-mvc-beginner.xml" />
+    <import resource="classpath:/bean/spring-mvc-authstr.xml" />
+    
+    <!-- <bean class="com.fld.init.ctrl.interceptor.SessionUtils"></bean> -->
+    
+	<!-- 文件上传 -->
+    <bean
+        id="multipartResolver"
+        class="org.springframework.web.multipart.commons.CommonsMultipartResolver" >
+ 		<property name="maxUploadSize" value="5242880"/> <!-- 5M -->
+    </bean>
+	 
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/pages/" />
+		<property name="suffix" value=".jsp" />
+	</bean>
+	
+	<bean class="com.fld.init.ctrl.interceptor.ExceptionHandler"></bean>
+</beans>

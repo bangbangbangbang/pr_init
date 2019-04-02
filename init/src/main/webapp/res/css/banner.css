@@ -1,0 +1,77 @@
+@import 'base.css';
+.banner {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  background-color: #FF9900;
+  min-height: 3.46666667rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  position: relative;
+}
+.banner .banner_top {
+  width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 0.4rem;
+  color: #fff;
+}
+.banner .banner_top a {
+  display: block;
+  color: #fff;
+}
+.banner .banner_top font {
+  font-size: 0.48rem;
+  color: #fff;
+}
+.banner .line {
+  margin-top: 0.16rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.banner .banner_con {
+  width: 82%;
+  padding: 0.16rem 0.53333333rem;
+  text-align: center;
+  vertical-align: middle;
+  background-color: #FFCC00;
+  margin-top: 0.8rem;
+  position: absolute;
+  z-index: 55;
+  left: 50%;
+  color: #ff6600;
+  font-style: oblique;
+  transform: translate(-50%, 0);
+  -webkit-border-radius: 0.08rem;
+  -moz-border-radius: 0.08rem;
+  -ms-border-radius: 0.08rem;
+  -o-border-radius: 0.08rem;
+  border-radius: 0.08rem;
+  -webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -ms-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  -o-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.34901961);
+}
+.banner .banner_bottom {
+  width: 100%;
+  padding-top: 1.06666667rem;
+  padding-left: 0.53333333rem;
+  padding-right: 0.53333333rem;
+  padding-bottom: 0.53333333rem;
+}
+.banner .banner_bottom .banner_bottom_l {
+  float: left;
+}
+.banner .banner_bottom .banner_bottom_r {
+  float: right;
+  position: relative;
+}
+.banner .banner_bottom .banner_bottom_r img {
+  position: absolute;
+  right: 0;
+}

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>   
+    <!DOCTYPE mapper   
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">  
+
+<mapper namespace="com.fld.init.dao.TestCreMapper">
+
+	 <resultMap id="BaseResultMap" type="com.fld.init.model.TestCre">
+	       		 <result property="t1" column="t1" />
+	       		 <result property="t2" column="t2" />
+        	    <id column="id"  property="id" />
+	</resultMap>
+	
+	<sql id="BaseColumnList">
+	    <![CDATA[
+			test_cre.t1 t1 ,
+			test_cre.t2 t2 ,
+			test_cre.id id 
+	    ]]>
+	</sql>
+	
+	<sql id="listWhere">
+	       <if test="t1 != null ">
+				and t1 = #{t1}
+			</if>
+	       <if test="t2 != null and t2 != ''">
+				and t2 = #{t2}
+			</if>
+	       <if test="id != null and id != ''">
+				and id = #{id}
+			</if>
+   </sql>
+	
+	<insert id="save" useGeneratedKeys="true" keyProperty="id">
+	        insert into
+	        	test_cre 
+	        <trim prefix="(" suffix=")" suffixOverrides="," >
+     			<if test="t1 != null">
+			       	 t1 ,
+			     </if>
+     			<if test="t2 != null">
+			       	 t2 ,
+			     </if>
+     			<if test="id != null">
+			       	 id ,
+			     </if>
+	        </trim>
+    		<trim prefix="values (" suffix=")" suffixOverrides="," >
+	        		  <if test="t1 != null">
+						    	 #{t1} ,
+				   </if>
+	        		  <if test="t2 != null">
+						    	 #{t2} ,
+				   </if>
+	        		  <if test="id != null">
+						    	 #{id} ,
+				   </if>
+	       </trim>
+	</insert>
+	
+	 <select id="count" resultType="int">
+   		select 
+   			count(*)
+   		from
+   			test_cre
+   		<where>
+   			<include refid="listWhere"/>
+   		</where>
+   </select>
+
+	<select id="findList" resultMap="BaseResultMap" >
+   		select 
+   			 <include refid="BaseColumnList"/>
+   		from
+   			test_cre
+   		<where>
+   			<include refid="listWhere"/>
+   		</where>
+   		<if test="sortName != null ">
+   			  order by 
+				<if test="'t1' == sortName">
+			       t1
+			    </if>
+				<if test="'t2' == sortName">
+			       t2
+			    </if>
+				<if test="'id' == sortName">
+			       id
+			    </if>
+   			<if test="order != null ">
+   				${ order}
+   			</if>
+   		</if>
+   		<if test="beginIndex != null and pageSize != null">
+			limit #{beginIndex} , #{pageSize}
+		</if>
+   </select>
+
+<update id="update"   >
+   		 update test_cre
+    <set>
+					<if test="t1 != null">
+			        t1 = #{t1},
+			      </if>
+					<if test="t2 != null">
+			        t2 = #{t2},
+			      </if>
+    </set>
+    where id = #{id}
+   </update>
+    
+    <delete id="delete"  >
+	    delete from test_cre
+	    <where>
+   			<include refid="listWhere"/>
+   		</where>
+  </delete>
+    
+  
+   
+   
+    <delete id="deleteById" parameterType="String" >
+	    delete from test_cre
+	    where  id = #{id}
+   </delete>
+  
+    <select id="getById" resultMap="BaseResultMap"  parameterType="String">
+	   select 
+   			 <include refid="BaseColumnList"/>
+   		from
+	        test_cre 
+	     where id = #{id}
+    </select>
+   
+	
+</mapper>
+

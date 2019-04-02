@@ -1,0 +1,712 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+img {
+  display: inline
+	border:none;
+  vertical-align: middle;
+}
+html {
+  font-size: 54px;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  font-family: "微软雅黑";
+  font-size: 0.37333333rem;
+}
+ul {
+  list-style: none;
+}
+.max-width {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+}
+.canvas-box {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: url(../../img/luckdraw/bg.jpg) no-repeat;
+  background-size: 100% 100%;
+}
+.canvas-box .logo {
+  display: block;
+  width: 3.18666667rem;
+  height: 1.29333333rem;
+  margin-top: 0.33333333rem;
+}
+.canvas-box .logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.canvas-box .layerTit {
+  width: 8.74666667rem;
+  margin: 0 auto;
+  margin-bottom: 0.26666667rem;
+  overflow: auto;
+}
+.canvas-box .ruleTit {
+  float: left;
+  width: 2.28rem;
+  height: 0.50666667rem;
+  margin-top: 0.08rem;
+}
+.canvas-box .viewRecode {
+  float: right;
+  width: 3.90666667rem;
+  height: 0.66666667rem;
+  clear: both;
+}
+.canvas-box .prizeRecodeTit {
+  display: block;
+  width: 8.76rem;
+  height: 0.32rem;
+  margin: 0 auto;
+  clear: both;
+  background: url(../../img/luckdraw/recordTit.png) no-repeat;
+  background-size: 100% 100%;
+}
+.rulelist,
+.rulelist2 {
+  width: 7.44rem;
+  margin: 0.4rem auto;
+}
+.rulelist p,
+.rulelist2 p {
+  line-height: 0.53333333rem;
+  font-size: 0.32rem;
+  color: #e7c08c;
+}
+.rulelist span:first-child,
+.rulelist2 span:first-child {
+  float: left;
+}
+.rulelist span:last-child,
+.rulelist2 span:last-child {
+  display: block;
+  overflow: auto;
+}
+.rulelist2 p {
+  font-size: 0.34666667rem;
+  color: #333333;
+}
+.prizeRecodeTit2 {
+  display: block;
+  width: 8.76rem;
+  height: 0.32rem;
+  margin: 0 auto;
+  clear: both;
+  background: url(../../img/luckdraw/recordTit2.png) no-repeat;
+  background-size: 100% 100%;
+}
+.prizeRecodeTit3 {
+  display: block;
+  width: 8.76rem;
+  height: 0.32rem;
+  margin: 0 auto;
+  clear: both;
+  background: url(../../img/luckdraw/recordTit3.png) no-repeat;
+  background-size: 100% 100%;
+}
+.prizeRecodeList {
+  width: 5.97333333rem;
+  height: 2rem;
+  margin: 0.26666667rem auto;
+  overflow: hidden;
+  position: relative;
+  font-size: 0.37333333rem;
+  color: #e7c08c;
+}
+.prizeRecodeList ul {
+  width: 100%;
+  overflow: auto;
+  position: absolute;
+  top: 0;
+}
+.prizeRecodeList li {
+  width: 100%;
+  height: 0.66666667rem;
+  line-height: 0.66666667rem;
+  overflow: hidden;
+  padding-left: 0.53333333rem;
+  background: url(../../img/luckdraw/icon.png) left center no-repeat;
+  background-size: 0.26666667rem 0.26666667rem;
+}
+.prizeRecodeList span {
+  display: inline-block;
+  margin-left: -0.24rem;
+  vertical-align: -0.05333333rem;
+  font-size: 0.48rem;
+  color: #edf005;
+  transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+}
+.prizeRecodeList::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+  background-color: #fff;
+  opacity: 0;
+}
+.egg {
+  width: 6.56rem;
+  height: 8.26666667rem;
+  margin: 1.94666667rem auto 0 auto;
+  position: relative;
+}
+.egg .eggbox {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  background: url(../../img/luckdraw/egg.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .start {
+  width: 4.26666667rem;
+  height: 1.89333333rem;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -2.13333333rem;
+  margin-top: -0.94666667rem;
+  background: url(../../img/luckdraw/start.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .gash {
+  display: none;
+  width: 2.88rem;
+  height: 2.53333333rem;
+  position: absolute;
+  left: 50%;
+  top: 1.33333333rem;
+  margin-left: -1.44rem;
+  background: url(../../img/luckdraw/gash.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .beat {
+  display: none;
+  width: 2.37333333rem;
+  height: 2.37333333rem;
+  position: absolute;
+  right: 0;
+  top: -2.66666667rem;
+  background: url(../../img/luckdraw/beat.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .eggPrize,
+.egg .eggEmpty {
+  display: none;
+  width: 7.57333333rem;
+  height: 5.30666667rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -3.78666667rem;
+  background: url(../../img/luckdraw/egg2_1.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .eggEmpty {
+  background: url(../../img/luckdraw/egg2_2.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .guang {
+  display: none;
+  width: 6.21333333rem;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 3.6rem;
+  margin-left: -3.10666667rem;
+}
+.egg .guang:before {
+  content: '';
+  display: block;
+  width: 6.21333333rem;
+  height: 5.88rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -3.10666667rem;
+  background: url(../../img/luckdraw/guang.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .gift {
+  display: none;
+  width: 4.94666667rem;
+  height: 4.09333333rem;
+  position: absolute;
+  left: 50%;
+  bottom: 3.81333333rem;
+  margin-left: -2.47333333rem;
+  background: url(../../img/luckdraw/gift.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .title {
+  display: none;
+  width: 5.84rem;
+  height: 1.61333333rem;
+  position: absolute;
+  left: 50%;
+  top: -1.46666667rem;
+  margin-left: -2.92rem;
+  background: url(../../img/luckdraw/tit3.png) no-repeat;
+  background-size: 100% 100%;
+}
+.egg .emptyTitle {
+  display: none;
+  width: 6.93333333rem;
+  height: 2.08rem;
+  position: absolute;
+  left: 50%;
+  top: -0.8rem;
+  margin-left: -3.46666667rem;
+  background: url(../../img/luckdraw/tit4.png) no-repeat;
+  background-size: 100% 100%;
+}
+.prizeLayer {
+  display: none;
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.72);
+}
+.prizeLayer:before {
+  content: '';
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  height: 4.65333333rem;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  background-image: url(../../img/luckdraw/tit2.png);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 8.64rem 4.65333333rem;
+}
+.prizeLayer .prizeLayerBox {
+  width: 8.61333333rem;
+  height: 10.88rem;
+  position: relative;
+  padding-top: 1.30666667rem;
+  z-index: 2;
+  margin: 3.8rem auto 0 auto;
+  background-color: #fff100;
+  border-radius: 0.16rem;
+}
+.prizeLayer .close {
+  display: block;
+  width: 1.25333333rem;
+  height: 1.25333333rem;
+  position: absolute;
+  right: -0.4rem;
+  top: -0.50666667rem;
+  background: url(../../img/luckdraw/close.png) no-repeat;
+  background-size: 100% 100%;
+}
+.prizeLayer .prizeRecodeList {
+  width: 5.41333333rem;
+  height: 8rem;
+  overflow: auto;
+  color: #181818;
+}
+.prizeLayer .prizeRecodeList li {
+  width: 5.41333333rem;
+  background: url(../../img/luckdraw/icon2.png) left center no-repeat;
+  background-size: 0.26666667rem 0.26666667rem;
+  font-size: 0.4rem;
+}
+.ruleLayer:before {
+  background-image: url(../../img/luckdraw/tit6.png);
+}
+.ruleLayer .rulelist2 {
+  margin-top: 0;
+}
+.ruleLayer .note {
+  width: 100%;
+  text-align: center;
+  font-szie: 0.34666667rem;
+  color: #909090;
+}
+.eggbox.animated {
+  display: block;
+  animation: shake 0.5s ease;
+  -webkit-animation: shake 0.5s ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.eggbox.animated2 {
+  display: block;
+  animation: shake 0.5s ease infinite;
+  -webkit-animation: shake 0.5s ease infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.beat.animated {
+  display: block;
+  animation: beat 0.5s ease;
+  -webkit-animation: beat 0.5s ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.gash.animated {
+  display: block;
+  animation: gash 2s 0.5s ease;
+  -webkit-animation: gash 2s 0.5s ease;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.gash.animated2 {
+  display: block;
+  animation: shake2 0.5s ease infinite;
+  -webkit-animation: shake2 0.5s ease infinite;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.gift.animated,
+.title.animated {
+  display: block;
+  animation: gift 0.5s;
+  -webkit-animation: gift 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.timeout {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0.53333333rem;
+  margin-bottom: -1.33333333rem;
+  text-align: center;
+  color: #fff;
+}
+.timeout p:first-child {
+  font-size: 0.4rem;
+}
+.timeout p:last-child {
+  font-size: 1.06666667rem;
+}
+.canvas-box .topbar {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 1.49333333rem;
+  padding: 0.26666667rem 0;
+  margin-top: 0.34666667rem;
+  background-color: #7d0000;
+}
+.canvas-box .topbar .logo {
+  width: 3.17333333rem;
+  height: auto;
+  margin-top: 0.05333333rem;
+  margin-left: 0.48rem;
+}
+.canvas-box .topbar .logo img {
+  width: 100%;
+  height: auto;
+}
+.canvas-box .topbar .endTime {
+  float: right;
+}
+.canvas-box .topbar .endTime .cont {
+  padding-left: 0.26666667rem;
+  margin-right: 0.4rem;
+  position: relative;
+  overflow: hidden;
+  line-height: 0.85333333rem;
+  font-size: 0.85333333rem;
+  color: #fff;
+}
+.canvas-box .topbar .endTime .tit {
+  float: left;
+  font-size: 0.32rem;
+  color: #fff;
+}
+.count {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 0.26666667rem;
+  margin-bottom: 1.06666667rem;
+  text-align: center;
+  color: #fff;
+}
+.count p:first-child {
+  font-size: 1.06666667rem;
+}
+.count p:last-child {
+  font-size: 0.58666667rem;
+}
+@-webkit-keyframes beat {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    right: 0;
+    top: -2.66666667rem;
+  }
+  20% {
+    -webkit-transform: rotate(30deg) scale(1);
+    transform: rotate(30deg) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg) scale(1.5);
+    transform: rotate(-30deg) scale(1.5);
+    right: 40;
+    top: -0.8rem;
+  }
+}
+@keyframes beat {
+  0% {
+    -webkit-transform: rotate(0) scale(1);
+    transform: rotate(0) scale(1);
+    right: 0;
+    top: -2.66666667rem;
+  }
+  20% {
+    -webkit-transform: rotate(30deg) scale(1);
+    transform: rotate(30deg) scale(1);
+  }
+  100% {
+    -webkit-transform: rotate(-30deg) scale(1.5);
+    transform: rotate(-30deg) scale(1.5);
+    right: 40;
+    top: -0.8rem;
+  }
+}
+@-webkit-keyframes gash {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    margin-left: -1.44rem;
+  }
+  40% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    margin-left: -1.2rem;
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    margin-left: -0.93333333rem;
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    margin-left: -0.66666667rem;
+  }
+}
+@keyframes gash {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
+}
+@-webkit-keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+@keyframes shake {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-3px, 0, 0);
+    -ms-transform: translate3d(-3px, 0, 0);
+    transform: translate3d(-3px, 0, 0);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(3px, 0, 0);
+    -ms-transform: translate3d(3px, 0, 0);
+    transform: translate3d(3px, 0, 0);
+  }
+}
+@-webkit-keyframes shake2 {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.5);
+    transform: translate3d(0, 0, 0) scale(1.5);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-10px, 0, 0) scale(1.5);
+    transform: translate3d(-10px, 0, 0) scale(1.5);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(10px, 0, 0) scale(1.5);
+    transform: translate3d(10px, 0, 0) scale(1.5);
+  }
+}
+@keyframes shake2 {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, 0, 0) scale(1.5);
+    -ms-transform: translate3d(0, 0, 0) scale(1.5);
+    transform: translate3d(0, 0, 0) scale(1.5);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    -webkit-transform: translate3d(-3px, 0, 0) scale(1.5);
+    -ms-transform: translate3d(-3px, 0, 0) scale(1.5);
+    transform: translate3d(-3px, 0, 0) scale(1.5);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    -webkit-transform: translate3d(3px, 0, 0);
+    -ms-transform: translate3d(3px, 0, 0);
+    transform: translate3d(3px, 0, 0);
+  }
+}
+@-webkit-keyframes gift {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  70% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/*************************************适配**************************/
+/*适配iphone4*/
+@media screen and (min-width: 320px) and (max-width: 374px) {
+  html {
+    font-size: 32px;
+  }
+  .timeout {
+    margin-bottom: -1.86666667rem;
+  }
+  .canvas-box .layerTit {
+    margin-bottom: 0.26666667rem;
+  }
+  .count {
+    margin-top: 0;
+    margin-bottom: 0.26666667rem;
+  }
+  .prizeLayer .prizeRecodeList {
+    height: 8rem;
+  }
+  .egg {
+    width: 4.96rem;
+    height: 6.66666667rem;
+    margin-top: 3.52rem;
+  }
+  .egg .title {
+    top: -2.66666667rem;
+  }
+}
+@media (device-height: 640px) and (-webkit-min-device-pixel-ratio: 2) {
+  .egg {
+    margin-top: 3.25333333rem;
+  }
+}
+/*适配iphone6*/
+@media screen and (min-width: 375px) and (max-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 37.5px;
+  }
+}
+/*适配iphone6plus*/
+@media screen and (min-width: 414px) and (max-width: 736px) and (-webkit-min-device-pixel-ratio: 3) {
+  html {
+    font-size: 41.4px;
+  }
+}
+/*适配480*/
+@media only screen and (min-device-width: 480px) and (max-device-width: 719px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media only screen and (min-device-width: 720px) and (max-device-width: 1079px) {
+  html {
+    font-size: 36px;
+  }
+}
+@media only screen and (min-device-width: 1080px) and (-webkit-min-device-pixel-ratio: 2) {
+  html {
+    font-size: 54px;
+  }
+}
+/*魅族*/
+@media only screen and (min-device-width: 1080px) and (-webkit-min-device-pixel-ratio: 2.5) {
+  html {
+    font-size: 43.2px;
+  }
+}
+/*mate7*/
+@media only screen and (min-device-width: 1080px) and (-webkit-min-device-pixel-ratio: 3) {
+  html {
+    font-size: 36px;
+  }
+}

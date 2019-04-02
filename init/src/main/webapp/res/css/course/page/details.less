@@ -1,0 +1,170 @@
+@import "../base.css";
+
+.details_page {
+    width: 100%;
+    max-width: 540px;
+    height: 100%;
+    margin: 10/37.5rem auto;
+    
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+
+    // 详情页的标题开始
+    .details_header {
+        width: 100%;
+        height: 80/37.5rem;
+        padding: 0 15/37.5rem;
+        // font-family: "Yuanti-SC-Regular";
+        font-family: "Microsoft YaHei";
+        padding-top: 15/37.5rem;
+        h3 {
+            font-size: 16/37.5rem;
+            font-weight: 600;
+        }
+        h5 {
+            font-size: 10/37.5rem;
+            margin-top: 7/37.5rem;
+            color: #797979;
+        }
+    }
+    // 详情页的标题结束
+
+    // 暂停播放的audio开始
+    .details_controls{
+        position: relative;
+        line-height: 10/37.5rem;
+        padding: 0 15/37.5rem;
+        .controls {  
+            width: 100%;
+            height: 10/37.5rem;
+                   
+            .progress {
+                width: 100%;
+                height: 10/37.5rem;
+                position: relative;
+                .lineaft {
+                    width: 100%;
+                    height: 4/37.5rem;
+                    position: absolute;
+                    left: 0;
+                    top: 4/37.5rem;
+                    background-color: #eee;
+                    -webkit-border-radius: 5px;
+                    -moz-border-radius: 5px;
+                    -ms-border-radius: 5px;
+                    -o-border-radius: 5px;
+                    border-radius: 5px;
+                }
+                .circle {
+                    display: block;
+                    width: 10/37.5rem;
+                    height: 10/37.5rem;
+                    position: absolute;
+                    // left: 0;
+                    top: 1/37.5rem;
+                    -webkit-border-radius: 50%;
+                    -moz-border-radius: 50%;
+                    -ms-border-radius: 50%;
+                    -o-border-radius: 50%;
+                    border-radius: 50%;
+                    color: #ff8319;
+                    background-color: #ff8319;
+                    
+                }
+            }
+            .txt {
+                position: absolute;
+                left: 0;
+                top: 20/37.5rem;
+                padding: 0 15/37.5rem;
+                font-size: 0.37333333rem;
+                color: #ccc;
+            }
+            .txt2 {
+                position: absolute;
+                right: 0;
+                top: 20/37.5rem;
+                padding: 0 15/37.5rem;
+                font-size: 0.37333333rem;
+                color: #ccc;
+            } 
+        }
+        .btn_img {
+            width: 100%;
+            height: 50/37.5rem;
+            margin-top: 30/37.5rem;
+            line-height: 50/37.5rem;
+            text-align: center;
+            vertical-align: middle;
+            .like {
+                float: left;
+                width: 33.33%;
+                height: 50/37.5rem;
+                color: #a6a6a6;
+                img {                  
+                   width: 15/37.5rem; 
+                }
+                b {
+                    font-size: 0.37.5rem;
+                    color: #a6a6a6;
+                    vertical-align:middle;
+                }
+            }
+           
+            .toDayMiao {
+                float: left;
+                width: 33.33%; 
+                    .con_suspend {
+                        width: 40/37.5rem;
+                        height: 40/37.5rem;
+                    }
+                }
+            .share {
+                float: right;
+                width: 33.33%;
+                color: #a6a6a6;
+                img {                  
+                   width: 12/37.5rem; 
+                }
+                b {
+                    font-size: 0.37.5rem;
+                    color: #a6a6a6;
+                    vertical-align:middle;
+                }
+            }
+        }                                        
+     } 
+      // 暂停播放的audio结束
+
+
+    //  分割线 
+      .parting_line {
+            margin-top: 10/37.5rem;
+            padding: 0;
+            width: 100%;
+            height: 0.12rem;
+            background-color: #efeff4;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+            border-radius: 5px;
+      }
+
+    //   底部的图片开始
+    .footer_img {
+        margin-top: 10/37.5rem;
+        padding: 0 15/37.5rem;
+        img {
+            margin-bottom: 10/37.5rem;
+            width: 100%;
+        }
+    }
+
+
+}
+
+

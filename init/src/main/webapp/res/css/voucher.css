@@ -1,0 +1,171 @@
+.page {
+  width: 100%;
+}
+.page .public {
+  width: 100%;
+  max-width: 540px;
+  height: auto;
+  min-height: 20rem;
+  padding: 0 0.53333333rem;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-top: 1.86666667rem;
+}
+.page .public .userInfo {
+  width: 100%;
+  position: relative;
+}
+.page .public .userInfo .headImg {
+  width: 1.73333333rem;
+  height: 1.73333333rem;
+  border-radius: 50%;
+  position: absolute;
+  top: -30%;
+  left: 1%;
+  border: 0.06rem solid #000;
+}
+.page .public .userInfo .headImg img {
+  width: 1.62666667rem;
+  height: 1.62666667rem;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.page .public .userInfo .content {
+  width: 90%;
+  float: right;
+  min-height: 2rem;
+  border: 0.06rem solid #000;
+  margin: 0 auto;
+  border-radius: 10px;
+  font-size: 0.34666667rem;
+  background-color: #ffeb7f;
+  padding: 0.4rem 0.4rem 0.4rem 1.09333333rem;
+}
+.page .public .voucher {
+  height: auto;
+  min-height: 7rem;
+  margin-top: 0.8rem;
+}
+.page .public .voucher .voucherTop {
+  width: 100%;
+  position: relative;
+}
+.page .public .voucher .voucherTop img {
+  width: 100%;
+}
+.page .public .voucher .voucherTop h1 {
+  font-size: 0.93333333rem;
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+.page .public .voucher .voucherTop .top {
+  width: 100%;
+  font-size: 0.37333333rem;
+  color: #d4261a;
+  position: absolute;
+  top: 35%;
+  text-align: center;
+}
+.page .public .voucher .voucherTop .time {
+  width: 100%;
+  font-size: 0.29333333rem;
+  color: #fff;
+  position: absolute;
+  top: 58%;
+  text-align: center;
+}
+.page .public .voucher .voucherTop .bottom {
+  width: 100%;
+  font-size: 0.48rem;
+  color: #000;
+  position: absolute;
+  bottom: 15%;
+  text-align: center;
+}
+.page .public .cntBlockOne {
+  padding-top: 0.8rem;
+}
+.page .public .cntBlockOne .cntTitle {
+  text-align: left;
+  padding: 0.7rem 0 0 0;
+}
+.page .public .cntBlockOne .cntTitle .title {
+  font-size: 0.42rem;
+}
+.page .public .cntBlockOne .cntContent {
+  margin: 0.4rem 0 0 0;
+  text-align: left;
+  line-height: 0.9rem;
+  color: #515151;
+}
+.page .public .cntBlockOne .cntContent p {
+  font-size: 0.38rem;
+}
+.page .public .cntBlock {
+  padding-top: 0.53333333rem;
+}
+.page .public .cntBlock .cntContent {
+  margin: 0.4rem 0 0 0;
+  text-align: left;
+  color: #515151;
+}
+.page .public .cntBlock .cntTitle .title {
+  font-size: 0.42rem;
+}
+.page .public .cntContent table {
+  font-size: 99%;
+  color: #515151;
+}
+.page .public .cntContent table img {
+  width: 0.6rem;
+}
+.page .public .cntContent table td {
+  padding-left: 0.2rem;
+}
+.page .public .cntContent table td b {
+  font-size: 0.37333333rem;
+}
+.page .public .subtitle {
+  text-align: center;
+  font-size: 0.45333333rem;
+  line-height: 0.45333333rem;
+  margin-top: 0.8rem;
+}
+.page .public .subtitle span:before {
+  left: -100%;
+}
+.page .public .subtitle span:after {
+  right: -100%;
+}
+.page .public .subtitle span {
+  display: block;
+  width: 4.2rem;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 0.40rem;
+}
+.page .public .subtitle span:before,
+.page .public .subtitle span:after {
+  content: '';
+  width: 1.7rem;
+  height: 0;
+  position: absolute;
+  top: 50%;
+  border-top: 0.05333333rem solid #000;
+  margin: 0px 110px;
+}
+.page .public .ruleDesc {
+  margin-bottom: 1.33333333rem;
+  min-height: 7rem;
+  margin-top: 0.53333333rem;
+  color: #515151;
+}
+.page .public .ruleDesc .ruleDesc p {
+  font-size: 0.35rem;
+}

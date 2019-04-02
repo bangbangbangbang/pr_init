@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.0"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd">
+    <description>baseStaticUrl</description>
+    <tlib-version>2.0</tlib-version>
+    <short-name>baseStaticUrl</short-name>
+    <uri>/baseStaticUrl</uri>
+    <tag>
+        <name>staticUrl</name>
+        <tag-class>com.sevenchildren.yzmm.html.BaseStaticUrl</tag-class>
+        <body-content>JSP</body-content> 
+         <attribute>
+           <description>初始页面不加前后缀</description>
+           <name>init</name>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+           <type>java.lang.Boolean</type>
+       </attribute>
+         <attribute>
+           <description>仅获取baseStaticUrl</description>
+           <name>gain</name>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+           <type>java.lang.Boolean</type>
+       </attribute>
+         <attribute>
+           <description>设置version值</description>
+           <name>version</name>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+           <type>java.lang.String</type>
+       </attribute>
+       <attribute>
+       	   <description>设置baseStaticUrl值</description>
+           <name>baseUrl</name>
+           <required>false</required>
+           <rtexprvalue>true</rtexprvalue>
+           <type>java.lang.String</type>
+       </attribute>
+    </tag>
+</taglib>
